@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autocomplete cep js</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="js/scrips.js" defer></script>
+
+<!-- BOOTSTRAP -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+<!-- BOOTSTRAP ICONS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+
+</head>
+<body id="checkout-page">
+    <div id="fade" class="hide">
+        <div id="loader" class="spinner-border text-info hide" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+        <div id="message" class="hide">
+            <div class="alert alert-light" role="alert">
+                <h4>Mensagem:</h4>
+                <p>mensagem teste</p>
+                <button id="close-message" type="button" class="btn btn-secondary">Fechar</button>
+            </div>
+        </div>
+    </div>
+    <div id="order-form-container" class="container px-md-0">
+        <div id="steps" class="mb-md3 pb-md-3">
+            <div class="line"></div>
+            <div class="step">
+                <i class="bi bi-person active"></i>
+                <p class="d-none d-md-block">criação de conta</p>
+            </div>
+            <div class="step">
+                <i class="bi bi-geo-alt active"></i>
+                <p class="d-none d-md-block">Endereço</p>
+            </div>
+            <div class="step">
+                <i class="bi bi-credit-card"></i>
+                <p class="d-none d-md-block">Pagamento</p>
+            </div>
+        </div>
+        <div id="form-header">
+            <h2>Cadastro o seu endereço</h2>
+            <p>Preencha os campos para podermos enviar os seus produtos</p>
+        </div>
+        <form id="address-form">
+            <div class="row mb-3">
+                <div class="form-floating">
+                    <input type="text" class="form-control shadow none" id="cep" name="cep" placeholder="Digíte o seu CEP" minlength="8" maxlength="8" required>
+                    <label for="cep">Digite o seu CEP</label>
+                </div>
+            </div>
+                <div class="row mb-3 mb-3 mb-sm-0">
+                    <div class="form-floating col-12 col-sm-6 mb-3 mb-sm-0">
+                        <input type="text" class="form-control shadow none" id="address" name="address" placeholder="Rua" required data-input>
+                        <label for="Rua">Rua</label>
+                    </div>
+                    <div class="form-floating col-12 col-sm-6">
+                        <input type="text" class="form-control shadow none" id="number-house" name="number-house" placeholder="Digíte o numero da residência" required data-input>
+                        <label for="number-house">Digíte o numero da residência</label>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="form-floating col-12 col-sm-6 mb-3 mb-sm-0">
+                        <input type="text" class="form-control shadow none" id="complement" name="complement" placeholder="complemento" data-input>
+                        <label for="complement">complemento</label>
+                    </div>
+                    <div class="form-floating col-12 col-sm-6">
+                        <input type="text" class="form-control shadow none" id="neighborhood" name="neighborhood" placeholder="complemento" required data-input>
+                        <label for="neighborhood">bairro</label>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="form-floating col-12 col-sm-6 mb-3 mb-sm-0">
+                        <input type="text" class="form-control shadow none" id="city" name="city" placeholder="Cidade" disabled required data-input>
+                        <label for="city">Cidade</label>
+                    </div>
+                    <div class="form-floating col-12 col-sm-6">
+                        <select name="region" id="region" class="form-select shadow-none" disabled required data-input>
+                            <option selected>Estado</option>
+                            <option value="AM">Amazonas</option>
+                            <option value="PI">Piauí</option>
+                            <option value="CE">Ceará</option>
+                            <option value="MA">Maranhão</option>
+                            <option value="BA">Bahia</option>
+                            <option value="SE">Sergipe</option>
+                            <option value="SP">São Paulo</option>
+                            <option value="RJ">Rio de Janeiro</option>
+                            <option value="MG">Minas Gerais</option>
+                            <option value="ES">Espirito Santo</option>
+                            <option value="MS">Mato grosso do Sul</option>
+                            <option value="SC">Santa Catarina</option>
+                            <option value="PN">Paraná</option>
+                            <option value="MT">Mato Grosso</option>
+                            <option value="TO">Tocantins</option>
+                            <option value="AL">Alagoas</option>
+                            <option value="AC">Acre</option>
+                            <option value="AP">Amapá</option>
+                            <option value="DF">Distrito Federal</option>
+                            <option value="PE">Pernambuco</option>
+                            <option value="RO">Rondônia</option>
+                            <option value="RR">Roraima</option>
+                            <option value="GO">Goiás</option>
+                            <option value="PB">Paraiba</option>
+                            <option value="RN">Rio Grande do Norte</option>
+                            <option value="RS">Rio Grande do Sul</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-center mb-5">
+                    <button id="save-btn" type="submit" class="btn btn-primary">Cadastrar</button>
+                </div>
+        </form>
+    </div>
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autocomplete cep js</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="js/scrips.js" defer></script>
+
+<!-- BOOTSTRAP -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+<!-- BOOTSTRAP ICONS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+
+</head>
+<body id="checkout-page">
+    <div id="fade" class="hide">
+        <div id="loader" class="spinner-border text-info hide" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+        <div id="message" class="hide">
+            <div class="alert alert-light" role="alert">
+                <h4>Mensagem:</h4>
+                <p>mensagem teste</p>
+                <button id="close-message" type="button" class="btn btn-secondary">Fechar</button>
+            </div>
+        </div>
+    </div>
+    <div id="order-form-container" class="container px-md-0">
+        <div id="steps" class="mb-md3 pb-md-3">
+            <div class="line"></div>
+            <div class="step">
+                <i class="bi bi-person active"></i>
+                <p class="d-none d-md-block">criação de conta</p>
+            </div>
+            <div class="step">
+                <i class="bi bi-geo-alt active"></i>
+                <p class="d-none d-md-block">Endereço</p>
+            </div>
+            <div class="step">
+                <i class="bi bi-credit-card"></i>
+                <p class="d-none d-md-block">Pagamento</p>
+            </div>
+        </div>
+        <div id="form-header">
+            <h2>Cadastro o seu endereço</h2>
+            <p>Preencha os campos para podermos enviar os seus produtos</p>
+        </div>
+        <form id="address-form">
+            <div class="row mb-3">
+                <div class="form-floating">
+                    <input type="text" class="form-control shadow none" id="cep" name="cep" placeholder="Digíte o seu CEP" minlength="8" maxlength="8" required>
+                    <label for="cep">Digite o seu CEP</label>
+                </div>
+            </div>
+                <div class="row mb-3 mb-3 mb-sm-0">
+                    <div class="form-floating col-12 col-sm-6 mb-3 mb-sm-0">
+                        <input type="text" class="form-control shadow none" id="address" name="address" placeholder="Rua" required data-input>
+                        <label for="Rua">Rua</label>
+                    </div>
+                    <div class="form-floating col-12 col-sm-6">
+                        <input type="text" class="form-control shadow none" id="number-house" name="number-house" placeholder="Digíte o numero da residência" required data-input>
+                        <label for="number-house">Digíte o numero da residência</label>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="form-floating col-12 col-sm-6 mb-3 mb-sm-0">
+                        <input type="text" class="form-control shadow none" id="complement" name="complement" placeholder="complemento" data-input>
+                        <label for="complement">complemento</label>
+                    </div>
+                    <div class="form-floating col-12 col-sm-6">
+                        <input type="text" class="form-control shadow none" id="neighborhood" name="neighborhood" placeholder="complemento" required data-input>
+                        <label for="neighborhood">bairro</label>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="form-floating col-12 col-sm-6 mb-3 mb-sm-0">
+                        <input type="text" class="form-control shadow none" id="city" name="city" placeholder="Cidade" disabled required data-input>
+                        <label for="city">Cidade</label>
+                    </div>
+                    <div class="form-floating col-12 col-sm-6">
+                        <select name="region" id="region" class="form-select shadow-none" disabled required data-input>
+                            <option selected>Estado</option>
+                            <option value="AM">Amazonas</option>
+                            <option value="PI">Piauí</option>
+                            <option value="CE">Ceará</option>
+                            <option value="MA">Maranhão</option>
+                            <option value="BA">Bahia</option>
+                            <option value="SE">Sergipe</option>
+                            <option value="SP">São Paulo</option>
+                            <option value="RJ">Rio de Janeiro</option>
+                            <option value="MG">Minas Gerais</option>
+                            <option value="ES">Espirito Santo</option>
+                            <option value="MS">Mato grosso do Sul</option>
+                            <option value="SC">Santa Catarina</option>
+                            <option value="PN">Paraná</option>
+                            <option value="MT">Mato Grosso</option>
+                            <option value="TO">Tocantins</option>
+                            <option value="AL">Alagoas</option>
+                            <option value="AC">Acre</option>
+                            <option value="AP">Amapá</option>
+                            <option value="DF">Distrito Federal</option>
+                            <option value="PE">Pernambuco</option>
+                            <option value="RO">Rondônia</option>
+                            <option value="RR">Roraima</option>
+                            <option value="GO">Goiás</option>
+                            <option value="PB">Paraiba</option>
+                            <option value="RN">Rio Grande do Norte</option>
+                            <option value="RS">Rio Grande do Sul</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-center mb-5">
+                    <button id="save-btn" type="submit" class="btn btn-primary">Cadastrar</button>
+                </div>
+        </form>
+    </div>
+</body>
+</html>
