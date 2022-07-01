@@ -1,0 +1,117 @@
+:root {
+ --bg-color: rgb(27, 0, 36);
+ --secondy-bg-color: #c2e9;
+ --primary-color: #fff;
+ --secondy-color: #25cc88;
+ --text-color: #8789af;
+ --border-color: #20235b;
+}
+#checkout-page {
+ background-color: rgb(27, 0, 36);
+ color: var(--primary-color);
+}
+/* message */
+
+#fade {
+position: fixed;
+top: 0;
+left: 0;
+height: 100%;
+width: 100%;
+background-color: rgba(0, 0, 0, 0.6);
+display: flex;
+align-items: center;
+justify-content: center;
+z-index: 10;
+}
+#fade .spinner-border {
+width: 60px;
+height: 60px;
+}
+.hide {
+display: none !important;
+}
+#message {
+width: 40%;
+}
+.alert.alert-light p {
+border-bottom: 1px solid #333;
+padding: 1.2em 0;
+}
+
+/* steps */
+#order-form-container {
+padding: 1.5em;
+max-width: 700px;
+}
+#steps {
+display: flex;
+justify-content: space-between;
+border-bottom: 1px solid var(--border-color) ;
+}
+.step {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+.step i {
+background-color: var(--secondy-bg-color);
+width: 45px;
+height: 45px;
+line-height: 45px;
+border-radius: 50%;
+font-size: 1.2em;
+text-align: center;
+margin-bottom: 0.3em;
+}
+.step .active {
+background-color: var(--secondy-color);
+color: var(--primary-color);
+}
+.step p {
+color: var(--text-color);
+}
+.line {
+border-bottom: 1px solid var(--border-color);
+position: absolute;
+top: 45px;
+width: 75%;
+left: 13%;
+z-index: -1;
+}
+/* Form Header */
+#form-header p {
+color: var(--text-color);
+}
+/* Form */
+#order-form-container input, #order-form-container select {
+background-color: var(--bg-color);
+border: 2p solid var(--border-color);
+color: var(--primary-color);
+}
+#order-form-container select {
+padding: 1rem .75rem;
+}
+#order-form-container label {
+color: var(--text-color);
+left: 1em;
+}
+#order-form-container input:disabled, #order-form-container select:disabled { 
+background-color: var(--secondy-bg-color);
+color: var(--text-color);
+}
+#order-form-container input:focus {
+border: 1px solid var(--secondy-color);
+}
+#save-btn {
+background-color: var(--secondy-color);
+border: none;
+height: 60px;
+width: 140px;
+border-radius: 30px;
+}
+#save-btn:hover {
+background-color: rgb(23, 216, 152);
+transform: scale(1.1);
+}
