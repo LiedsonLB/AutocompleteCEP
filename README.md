@@ -3,7 +3,7 @@
 
 # Imagens do Projeto
 <p align="center">
-  <img src="./img/site exemple.png" alt="HTML" style="width: 50%; margin: 0 auto;">
+  <img src="./img/site exemple.png" alt="HTML" style="width: 100%; margin: 0 auto;">
 </p>
 
 # Conhecimentos utilizados:
