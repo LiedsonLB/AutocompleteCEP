@@ -2,7 +2,7 @@
 um projeto simples de javascript para mostrar uma API que autocompleta pelo CEP informado
 
 # Conhecimentos utilizados:
-<div>
+<div style="display: flex;">
   <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg" alt="HTML" height="30" width="40">
   <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg" alt="CSS" height="30" width="40">
   <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg" alt="Javascript" height="30" width="40">
