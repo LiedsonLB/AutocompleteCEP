@@ -1,5 +1,5 @@
 # AutocompleteCEP
-um projeto simples de javascript para mostrar uma API que autocompleta pelo CEP informado
+## Um projeto simples de javascript para mostrar uma API que autocompleta pelo CEP informado
 
 # Conhecimentos utilizados:
 <div style="display: flex;">
