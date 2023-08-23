@@ -1,6 +1,9 @@
 # AutocompleteCEP
 #### Um projeto simples de javascript para mostrar uma API que autocompleta pelo CEP informado
 
+# Imagens do Projeto
+<img src="./img/site exemple.png" style="width: 50%;" / >
+
 # Conhecimentos utilizados:
 <div style="display: flex;">
   <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg" alt="HTML" height="30" width="40">
